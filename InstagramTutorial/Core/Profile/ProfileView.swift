@@ -1,0 +1,75 @@
+//
+//  ProfileView.swift
+//  InstagramTutorial
+//
+//  Created by Sachin Randive on 06/02/26.
+//
+
+import SwiftUI
+
+struct ProfileView: View {
+    var body: some View {
+        
+        VStack {
+            // header
+            VStack(spacing: 12) {
+                //pic and stats
+                HStack {
+                    Image("black_panther01")
+                        .resizable()
+                        .scaledToFill()
+                        .frame(width: 80, height: 80)
+                        .clipShape(Circle())
+                    
+                    Spacer()
+                    
+                    HStack(spacing: 8) {
+                        
+                        UserStatView(value: 3, title: "Posts")
+                        
+                        UserStatView(value: 1, title: "Followers")
+                        
+                        UserStatView(value: 2, title: "Following")
+                    }
+                }
+                .padding(.horizontal)
+                
+                // name and bio
+                VStack(alignment: .leading, spacing: 4) {
+                    Text("Sachin Randive")
+                        .font(.footnote)
+                        .fontWeight(.semibold)
+                    
+                    Text("sachin_randive01 add your bio")
+                        .font(.footnote)
+                    
+                }
+                .frame(maxWidth: .infinity, alignment: .leading)
+                .padding(.horizontal)
+                
+                
+                // Button Action
+                Button {
+                    
+                } label: {
+                    Text("Edit Profile")
+                        .font(.subheadline)
+                        .fontWeight(.semibold)
+                        .frame(width: 360, height: 32)
+                        .foregroundColor(.black)
+                        .overlay(content: {
+                            RoundedRectangle(cornerRadius: 6)
+                                .stroke(Color.black, lineWidth: 1)
+                        })
+                }
+                
+                // divider
+                Divider()
+            }
+        }
+    }
+}
+
+#Preview {
+    ProfileView()
+}
