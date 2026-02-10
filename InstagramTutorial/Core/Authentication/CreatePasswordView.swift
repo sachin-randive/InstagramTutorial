@@ -20,6 +20,7 @@ struct CreatePasswordView: View {
             Text("Your password must be 6 characters in length")
                 .font(.footnote)
                 .foregroundStyle(.gray)
+                .multilineTextAlignment(.center)
                 .padding(.horizontal, 24)
             
             SecureField("password", text: $password)
@@ -28,6 +29,8 @@ struct CreatePasswordView: View {
                 .padding(.top)
             
             NavigationLink {
+                CompleteSignupView()
+                    .navigationBarBackButtonHidden()
             } label: {
                 Text("Next")
                     .font(.subheadline)

@@ -20,6 +20,7 @@ struct AddEmailView: View {
             Text("You'll use this email to sign in to your account")
                 .font(.footnote)
                 .foregroundStyle(.gray)
+                .multilineTextAlignment(.center)
                 .padding(.horizontal, 24)
             
             TextField("Email", text: $email)

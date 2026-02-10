@@ -1,38 +1,34 @@
 //
-//  CreateUserNameView.swift
+//  CompleteSignupView.swift
 //  InstagramTutorial
 //
-//  Created by Sachin Randive on 09/02/26.
+//  Created by Sachin Randive on 10/02/26.
 //
 
 import SwiftUI
 
-struct CreateUserNameView: View {
-    @State private var username: String = ""
+struct CompleteSignupView: View {
     @Environment(\.dismiss) var dismiss
     
     var body: some View {
         VStack {
-            Text("Create username")
+            Spacer()
+            Text("Welcome to Instagram, sachin.randive")
                 .font(.title2)
                 .fontWeight(.bold)
+                .multilineTextAlignment(.center)
+                .padding()
+               
             
-            Text("You'll use this username to sign in to your account")
+            Text("Click below to complete registration and start using Instagram")
                 .font(.footnote)
-                .foregroundStyle(.gray)
                 .multilineTextAlignment(.center)
                 .padding(.horizontal, 24)
             
-            TextField("Username", text: $username)
-                .autocapitalization(.none)
-                .modifier(IGTextFieldModifier())
-                .padding(.top)
-            
-            NavigationLink {
-               CreatePasswordView()
-                    .navigationBarBackButtonHidden(true)
+            Button {
+                print("complete sign up")
             } label: {
-                Text("Next")
+                Text("Complete Sign Up")
                     .font(.subheadline)
                     .fontWeight(.semibold)
                     .foregroundStyle(.white)
@@ -55,5 +51,5 @@ struct CreateUserNameView: View {
 }
 
 #Preview {
-    CreateUserNameView()
+    CompleteSignupView()
 }
