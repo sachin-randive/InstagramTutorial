@@ -1,19 +1,22 @@
 //
-//  ProfileView.swift
+//  CurrentUserProfileView.swift
 //  InstagramTutorial
 //
-//  Created by Sachin Randive on 06/02/26.
+//  Created by Sachin Randive on 12/02/26.
 //
 
 import SwiftUI
 
-struct ProfileView: View {
+struct CurrentUserProfileView: View {
+    
     private var gridItems: [GridItem] = [
         .init(.flexible(), spacing: 1),
         .init(.flexible(), spacing: 1),
         .init(.flexible(), spacing: 1)
     ]
+    
     var body: some View {
+        NavigationStack {
             ScrollView {
                 // header
                 VStack(spacing: 12) {
@@ -82,9 +85,20 @@ struct ProfileView: View {
             }
             .navigationTitle("Profile")
             .navigationBarTitleDisplayMode(.inline)
+            .toolbar  {
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    Button {
+                        
+                    } label: {
+                        Image(systemName: "line.3.horizontal")
+                            .foregroundStyle(.black)
+                    }
+                }
+            }
         }
+    }
 }
 
 #Preview {
-    ProfileView()
+    CurrentUserProfileView()
 }
