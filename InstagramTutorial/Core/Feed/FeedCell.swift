@@ -27,7 +27,6 @@ struct FeedCell: View {
                         .fontWeight(.semibold)
                 }
                 
-                
                 Spacer()
             }
             .padding(.leading, 8)
@@ -100,5 +99,5 @@ struct FeedCell: View {
 }
 
 #Preview {
-    FeedCell(post: Post.POST_MOCKS[4])
+    FeedCell(post: Post.MOCKS_POST[4])
 }
