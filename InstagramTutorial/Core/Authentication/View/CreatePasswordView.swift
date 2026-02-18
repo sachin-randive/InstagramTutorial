@@ -8,8 +8,8 @@
 import SwiftUI
 
 struct CreatePasswordView: View {
-    @State private var password: String = ""
     @Environment(\.dismiss) var dismiss
+    @EnvironmentObject var viewModel: RegistrationViewModel
     
     var body: some View {
         VStack {
@@ -23,7 +23,7 @@ struct CreatePasswordView: View {
                 .multilineTextAlignment(.center)
                 .padding(.horizontal, 24)
             
-            SecureField("password", text: $password)
+            SecureField("password", text: $viewModel.password)
                 .autocapitalization(.none)
                 .modifier(IGTextFieldModifier())
                 .padding(.top)

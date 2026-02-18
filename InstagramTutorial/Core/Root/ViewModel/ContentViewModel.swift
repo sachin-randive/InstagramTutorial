@@ -13,7 +13,7 @@ class ContentViewModel: ObservableObject {
     private let service = AuthService.shared
     
     @Published var userSession: FirebaseAuth.User?
-    private var cancellable: Set<AnyCancellable> = []
+    private var cancellable = Set<AnyCancellable>()
     
     init() {
         setupSubcribers()
