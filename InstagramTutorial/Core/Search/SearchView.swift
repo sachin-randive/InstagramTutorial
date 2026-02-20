@@ -9,12 +9,23 @@ import SwiftUI
 
 struct SearchView: View {
     @State private var searchText: String = ""
+    
+    private var filteredUsers: [User] {
+        if searchText.isEmpty {
+            return User.MOCK_USERS
+        } else {
+           return User.MOCK_USERS.filter { user in
+                user.username.localizedCaseInsensitiveContains(searchText)
+            }
+        }
+    }
+    
     var body: some View {
         
         NavigationStack {
             ScrollView {
                 LazyVStack(spacing: 12) {
-                    ForEach(User.MOCK_USERS) { user in
+                    ForEach(filteredUsers) { user in
                         NavigationLink(value: user) {
                             HStack {
                                 Image(user.profileImageUrl ?? " ")
