@@ -9,14 +9,20 @@ import SwiftUI
 
 struct SearchView: View {
     @State private var searchText: String = ""
+    @StateObject var viewModel = SearchViewModel()
     
     private var filteredUsers: [User] {
         if searchText.isEmpty {
-            return User.MOCK_USERS
+            //return User.MOCK_USERS
+            return viewModel.users
         } else {
-           return User.MOCK_USERS.filter { user in
-                user.username.localizedCaseInsensitiveContains(searchText)
-            }
+//           return User.MOCK_USERS.filter { user in
+//                user.username.localizedCaseInsensitiveContains(searchText)
+//            }
+            
+            return viewModel.users.filter { user in
+                 user.username.localizedCaseInsensitiveContains(searchText)
+             }
         }
     }
     
@@ -28,9 +34,11 @@ struct SearchView: View {
                     ForEach(filteredUsers) { user in
                         NavigationLink(value: user) {
                             HStack {
-                                Image(user.profileImageUrl ?? " ")
+                                //Image(user.profileImageUrl ?? " ")
+                                Image(systemName: "person.circle")
                                     .resizable()
                                     .scaledToFill()
+                                    .foregroundStyle(Color.gray)
                                     .frame(width: 40, height: 40)
                                     .clipShape(Circle())
                                 
