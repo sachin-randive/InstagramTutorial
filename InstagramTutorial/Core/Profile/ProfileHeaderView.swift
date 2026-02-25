@@ -13,7 +13,7 @@ struct ProfileHeaderView: View {
         VStack(spacing: 12) {
             //pic and stats
             HStack {
-                Image(user.profileImageUrl ?? "")
+                Image(user.profileImageUrl ?? "canen-1")
                     .resizable()
                     .scaledToFill()
                     .frame(width: 80, height: 80)
@@ -53,16 +53,23 @@ struct ProfileHeaderView: View {
             
             // Button Action
             Button {
+                if user.isCurrentUser {
+                    print("Edit profile")
+                } else {
+                    print("Follow user...")
+                }
                 
             } label: {
-                Text("Edit Profile")
+                Text(user.isCurrentUser ? "Edit Profile" : "Follow")
                     .font(.subheadline)
                     .fontWeight(.semibold)
                     .frame(width: 360, height: 32)
-                    .foregroundColor(.black)
+                    .background(user.isCurrentUser ? .white : Color(.systemBlue))
+                    .foregroundColor(user.isCurrentUser ? .black : .white)
+                    .cornerRadius(6)
                     .overlay(content: {
                         RoundedRectangle(cornerRadius: 6)
-                            .stroke(Color.black, lineWidth: 1)
+                            .stroke(user.isCurrentUser ? .gray : .clear, lineWidth: 1)
                     })
             }
             
