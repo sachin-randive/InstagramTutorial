@@ -2,3 +2,4 @@
 <img width="250" height="500" alt="Sign_Up" src="https://github.com/user-attachments/assets/286f7fdc-07ed-4bfb-b22b-3536522d9015" />
 <img width="250" height="500" alt="Home" src="https://github.com/user-attachments/assets/29fea280-3f88-4e1d-a03a-c1651b6fef34" />
 <img width="250" height="500" alt="Post" src="https://github.com/user-attachments/assets/40136b46-daf5-4fe9-a0b4-318c4b1094af" />
+<img width="250" height="500" alt="editProfile" src="https://github.com/user-attachments/assets/22abb62e-3e07-47dc-9013-e9b4ffc93b79" />
