@@ -15,13 +15,9 @@ struct ProfileHeaderView: View {
         VStack(spacing: 12) {
             //pic and stats
             HStack {
-                AsyncImage(url: URL(string: user.profileImageUrl ?? "https://avatar.iran.liara.run/public/2"))
-                    //.resizable()
-                    .scaledToFill()
-                    .aspectRatio(contentMode: .fill)
-                    .frame(width: 80, height: 80)
-                    .clipShape(Circle())
                 
+                CircularProfileImageView(user: user, size: .large)
+    
                 Spacer()
                 
                 HStack(spacing: 8) {
