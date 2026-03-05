@@ -32,7 +32,7 @@ struct UploadPostView: View {
                 Spacer()
                 Button {
                     Task {
-                        try await viewModel.uploadPosst(caption: caption)
+                        try await viewModel.uploadPost(caption: caption)
                         clearPostdataAndReturnToFeed()
                     }
                 }label: {

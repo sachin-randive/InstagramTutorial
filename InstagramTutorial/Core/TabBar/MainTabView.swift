@@ -39,7 +39,7 @@ struct MainTabView: View {
                 }
                 .tag(2)
             
-            Text("Notifications")
+             NotificationView()
                 .tabItem {
                     Image(systemName: "heart")
                 }
