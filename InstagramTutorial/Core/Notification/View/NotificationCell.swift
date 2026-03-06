@@ -37,7 +37,7 @@ struct NotificationCell: View {
                     .padding(.leading, 2)
             } else {
                 Button {
-                    print("DEBUG: Hnadle follow here")
+                    print("DEBUG: Handle follow here")
                 } label: {
                     Text("Follow")
                         .font(.subheadline)

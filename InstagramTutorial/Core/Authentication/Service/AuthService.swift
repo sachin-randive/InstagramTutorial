@@ -45,7 +45,7 @@ class AuthService {
     func loadUserData() async throws {
         self.userSession = Auth.auth().currentUser
         guard let currentid = userSession?.uid else { return }
-        let snapshot = try await Firestore.firestore().collection("users").document(currentid).getDocument()
+        let snapshot = try await FirestoreConstants.UsersCollection.document(currentid).getDocument()
         self.currentUser = try? snapshot.data(as: User.self)
     }
     
@@ -60,6 +60,6 @@ class AuthService {
         self.currentUser = user
         guard let encodedUser = try? Firestore.Encoder().encode(user) else {return}
         
-        try? await Firestore.firestore().collection("users").document(user.id).setData(encodedUser)
+        try? await FirestoreConstants.UsersCollection.document(user.id).setData(encodedUser)
     }
 }
